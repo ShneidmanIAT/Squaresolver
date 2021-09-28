@@ -1,7 +1,9 @@
 ﻿#include <iostream>
+
 int SolveSquare(float a, float b, float c, float* x1, float* x2);
 int LinearSolver(float a, float b, float c, float* x1);
 void ScanReader(float* a, float* b, float* c);
+
 enum AnswerNumber
 {
     Infinity = 3,
@@ -9,11 +11,11 @@ enum AnswerNumber
     One = 1,
     Zero = 0
 };
-   int main()
+
+int main()
 {
-    printf("#solver for square equation be yan\n"
-    "#2021\n");
-    printf("Parameters should be written by one and divided by gaps \n"); 
+    printf("#solver for square equation be yan\n#2021\n");
+    printf("Parameters should be written by one and divided by gaps\n"); 
     printf("Enter the name of file\n");
     float a, b, c;
     int typeOfAnswer;
@@ -26,14 +28,10 @@ enum AnswerNumber
         printf("equation does not have any answers");
         break;
     case One:
-        printf("equation has 1 answer x = ");
-        printf("%f", x1);
+        printf("%s %f", "equation has 1 answer x =", x1);
         break;
     case Two:
-        printf("equation has 2 answer x1 = ");
-        printf("%f", x1);
-        printf(", x2 = ");
-        printf("%f", x2);
+        printf("%s %f%s %f", "equation has 2 answers: x1 =", x1, ", x2 =", x2);
         break;
     case Infinity:
         printf("equation has infinite number of answers");
@@ -41,6 +39,7 @@ enum AnswerNumber
     }
 
 }
+
 int SolveSquare(float a, float b, float c, float* x1, float* x2)
 {
     if (a == 0) 
@@ -70,6 +69,7 @@ int SolveSquare(float a, float b, float c, float* x1, float* x2)
         }
     }
  }
+
 int LinearSolver(float a, float b, float c, float* x1)
 {
     if (a == 0)
@@ -92,7 +92,8 @@ int LinearSolver(float a, float b, float c, float* x1)
         }
     }
 }
-void ScanReader(float *a,float *b,float *c)
+
+void ScanReader(float *a, float *b, float *c)
 {
     int succesfully_added = 0;
     bool input_correct = false;
@@ -103,7 +104,6 @@ void ScanReader(float *a,float *b,float *c)
         {
             printf("Wrong type of input! Retry please:\n");
             succesfully_added = 0;
-            scanf("%*[^\n]");
         }
         else
         {
